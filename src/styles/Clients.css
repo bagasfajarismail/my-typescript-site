@@ -1,0 +1,95 @@
+.clients-section {
+  background-color: var(--dark-surface);
+  position: relative;
+}
+
+.clients-container {
+  margin: var(--space-6) 0;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.client-item {
+  background-color: var(--dark-bg);
+  border-radius: 10px;
+  padding: var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  height: 120px;
+}
+
+.client-logo {
+  max-width: 120px;
+  max-height: 60px;
+  filter: grayscale(100%) brightness(0.8);
+  transition: all 0.3s ease;
+}
+
+.client-item:hover .client-logo {
+  filter: grayscale(0%) brightness(1);
+}
+
+.collaboration-container {
+  margin-top: var(--space-7);
+  padding: var(--space-5);
+  background-color: var(--dark-bg);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.collaboration-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1));
+  z-index: 0;
+}
+
+.collaboration-title {
+  font-size: 1.8rem;
+  margin-bottom: var(--space-2);
+  position: relative;
+  z-index: 1;
+}
+
+.collaboration-text {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.collaboration-container .btn {
+  position: relative;
+  z-index: 1;
+  padding: 0.7rem 2rem;
+}
+
+@media (max-width: 767.98px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .client-item {
+    height: 100px;
+  }
+  
+  .client-logo {
+    max-width: 100px;
+    max-height: 50px;
+  }
+}
